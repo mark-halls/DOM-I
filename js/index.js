@@ -51,7 +51,7 @@ const nav = document.querySelector("nav");
 const navLinks = nav.querySelectorAll("a");
 
 for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+  navLinks[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
   navLinks[i].style.color = "green";
 }
 
