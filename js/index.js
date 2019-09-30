@@ -100,11 +100,12 @@ boldButton.style.padding = "2rem 6rem";
 boldButton.style.borderRadius = "10px";
 boldButton.style["font-size"] = "3rem";
 
-bodyHeader.prepend(boldButton);
-
-document.querySelector(".bold-button").addEventListener("click", function() {
+boldButton.addEventListener("click", function() {
   boldText();
 });
+
+bodyHeader.prepend(boldButton);
+
 //**************** main-content selector ****************
 const mainContent = document.querySelector(".main-content");
 
