@@ -73,6 +73,39 @@ cta.querySelector("h1").textContent = siteContent.cta.h1;
 cta.querySelector("button").textContent = siteContent.cta.button;
 document.getElementById("cta-img").src = siteContent.cta["img-src"];
 
+//**************** stretch cta ****************
+//create new style element
+const boldStyle = document.createElement("style");
+boldStyle.type = "text/css";
+boldStyle.innerHTML = ".bold { font-weight: bold; }";
+document.querySelector("head").appendChild(boldStyle);
+//click function
+const boldText = () => {
+  const bolded = document.querySelectorAll("p.bold");
+  const paragraphs = document.querySelectorAll("p");
+  if (bolded.length) {
+    paragraphs.forEach(p => p.classList.remove("bold"));
+  } else {
+    paragraphs.forEach(p => p.classList.add("bold"));
+  }
+};
+
+//create button
+const bodyHeader = document.querySelector(".container");
+const boldButton = document.createElement("button");
+
+boldButton.classList.add("bold-button");
+boldButton.textContent = "Bold";
+boldButton.style.padding = "2rem 6rem";
+boldButton.style.borderRadius = "10px";
+boldButton.style["font-size"] = "3rem";
+
+boldButton.addEventListener("click", function() {
+  boldText();
+});
+
+bodyHeader.prepend(boldButton);
+
 //**************** main-content selector ****************
 const mainContent = document.querySelector(".main-content");
 
